@@ -5,11 +5,9 @@ import {ConfigProps} from '../types';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../styles/globals.css';
-
 import updateLocale from 'dayjs/plugin/updateLocale';
 import dayjs from 'dayjs';
 import {daysInSpanish, monthsInSpanish} from '../lib/consts';
-
 import '../styles/globals.css';
 import Script from 'next/script';
 import {GTM_ID} from '../lib/gtm';

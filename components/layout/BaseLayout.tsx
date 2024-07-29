@@ -4,7 +4,7 @@ import GlobalLoader from '../GlobalLoader';
 
 import Footer from './Footer';
 import Header from './Header';
-import HomeBanner from './HomeBanner';
+import HomeBanner from '../HomeBanner';
 
 const BaseLayout = ({seo, children}: LayoutProps) => {
 
