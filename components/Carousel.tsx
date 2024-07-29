@@ -6,8 +6,6 @@ import ImageContainer from './ImageContainer';
 
 
 
-
-
 const Carousel = () => { 
 
     const settings = {
