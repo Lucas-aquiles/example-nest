@@ -8,7 +8,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: [
-      'developerlatam.com',
+      'developerlatam.com','rifa-club-strapi-develop.onrender.com','sb.kaleidousercontent.com'
     ],
   },
 };

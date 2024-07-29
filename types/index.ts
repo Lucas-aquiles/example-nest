@@ -14,7 +14,12 @@ export interface LayoutProps {
   children: React.ReactNode;
 }
 
-export interface HeaderProps {}
+export interface HeaderProps {
+  props: Record<string, any>; 
+}
+export interface HomeBannerProps {
+  data: Record<string, any>; 
+}
 
 export interface FooterProps {}
 

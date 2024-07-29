@@ -5,6 +5,18 @@ module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      height:{
+        '150':'35rem',
+        '200':'40rem',
+        '250':'45rem',
+        '300':'50rem',
+        '500':'0.09rem',
+
+
+
+
+
+      },
       colors: {
         primary: {
           40: '#5E5082',
@@ -75,6 +87,7 @@ module.exports = {
       },
       spacing: {
       },
+      
     },
   },
   plugins: [],

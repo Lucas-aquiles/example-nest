@@ -24,7 +24,7 @@ export const getRequest: any = async (
       authorization: `Bearer ${token}`,
     },
   });
-  console.log(res);
+  // console.log("aaaa",res);
 
   if (res.status >= 500) {
     return {

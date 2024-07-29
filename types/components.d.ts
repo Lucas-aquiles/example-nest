@@ -1,4 +1,5 @@
 import {CSSProperties, Dispatch, ReactNode, SetStateAction} from 'react';
+import HomeBanner from '../components/layout/HomeBanner';
 
 export type ImageAttributesProps = {
   alt: string;
@@ -19,6 +20,34 @@ export type SeoAttributesProps = {
     alt: string;
   };
 } | null;
+
+export type HomeBannerProps={
+  id: number;
+  title: string;
+  isActive: boolean;
+  backgroundImage:any;
+  suscribeNow:any
+
+}| null;
+
+export type IntroductionProps={
+  id: number;
+  title: string;
+  isActive: boolean;
+  backgroundImage:any;
+  content:string
+
+}| null;
+
+export type MainAwardsProps={
+  id: number;
+  title: string;
+  isActive: boolean;
+
+}| null;
+
+
+
 
 export interface HeroProps {
   data: {

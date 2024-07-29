@@ -2,6 +2,9 @@ import type {AppProps} from 'next/app';
 import App from 'next/app';
 import AppProvider from '../lib/AppContext';
 import {ConfigProps} from '../types';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import '../styles/globals.css';
 
 import updateLocale from 'dayjs/plugin/updateLocale';
 import dayjs from 'dayjs';

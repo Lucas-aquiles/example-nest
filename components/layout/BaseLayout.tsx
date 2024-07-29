@@ -4,8 +4,10 @@ import GlobalLoader from '../GlobalLoader';
 
 import Footer from './Footer';
 import Header from './Header';
+import HomeBanner from './HomeBanner';
 
 const BaseLayout = ({seo, children}: LayoutProps) => {
+
   return (
     <>
       <Head>
@@ -33,6 +35,9 @@ const BaseLayout = ({seo, children}: LayoutProps) => {
       </Head>
 
       <Header />
+      
+      
+
       <GlobalLoader />
 
       <div style={{scrollBehavior: 'auto'}}>{children}</div>

@@ -1,6 +1,10 @@
-import {HeaderProps} from '../../types';
+// import {HeaderProps} from '../../types';
+import Link from 'next/link';
+import Button from '../Button';
 
-const Header = ({}: HeaderProps) => {
+const Header = () => {
+
+  // console.log(props.renderHeader)
   return (
     <header className="bg-white shadow-lg">
       <div className="container mx-auto px-4">
@@ -12,26 +16,15 @@ const Header = ({}: HeaderProps) => {
           </div>
           <nav>
             <ul className="flex space-x-4">
-              <li>
-                <a href="#" className="text-gray-600 hover:text-gray-800">
-                  Inicio
-                </a>
+              {/* <li>
+                {  props&&<Button  children={props.renderHeader.link_inicio.button_text}  />
+}
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-gray-800">
-                  Acerca
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-gray-800">
-                  Servicios
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-gray-800">
-                  Contacto
-                </a>
-              </li>
+                {  props&&<Button  children={props.renderHeader.Sorteos_link[0].button_text}  />
+}
+              </li> */}
+             
             </ul>
           </nav>
         </div>

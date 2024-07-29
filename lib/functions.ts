@@ -1,4 +1,4 @@
-import {ImageAttributesProps, SeoAttributesProps} from '../types/components';
+import {ImageAttributesProps, SeoAttributesProps,HomeBannerProps,IntroductionProps,MainAwardsProps} from '../types/components';
 
 export const classNames = (...classes: Array<string | boolean | undefined>) => {
   return classes.filter(Boolean).join(' ');
@@ -34,6 +34,49 @@ const getSeoAttributes = (seo: any): SeoAttributesProps => {
   return attributesFormatted || null;
 };
 
+const getHomeBannerAttibutes = (homeBanner: any): HomeBannerProps => {
+  const attributesFormatted: HomeBannerProps = {
+    id: homeBanner?.id,
+    title: homeBanner?.title,
+    isActive: homeBanner?.isActive,
+    backgroundImage: homeBanner?.backgroundImage,
+    suscribeNow: homeBanner?.suscribeNow
+
+   
+  };
+
+  return attributesFormatted || null;
+};
+
+
+const getIntroductionAttributes = (introduction: any): IntroductionProps => {
+  const attributesFormatted: IntroductionProps = {
+    id: introduction?.id,
+    title: introduction?.title,
+    isActive: introduction?.isActive,
+    content : introduction?.content,
+    backgroundImage: introduction?.image,
+
+   
+  };
+
+  return attributesFormatted || null;
+};
+
+const getmainAwardsAttributes = (mainAwards: any): MainAwardsProps => {
+  const attributesFormatted: MainAwardsProps = {
+    id: mainAwards?.id,
+    title: mainAwards?.title,
+    isActive: mainAwards?.isActive,
+
+   
+  };
+
+  return attributesFormatted || null;
+};
+
+
+
 const validateExist = (info: Record<string, any> | null): null | Record<string, any> => {
   if (!info) return null;
   if (!info.isActive) return null;
@@ -47,6 +90,11 @@ export const parseHomeData = (info: Record<string, any> | null) => ({
     images: getImageAttributes(info?.hero?.image),
   },
   seo: getSeoAttributes(info?.seo),
+  homeBanner: getHomeBannerAttibutes(info?.homeBanner),
+  introduction: getIntroductionAttributes(info?.introduction),
+  mainAwards: getmainAwardsAttributes(info?.mainAwards)
+
+
 });
 
 export const buildQueryParams = (params?: Record<string, unknown>): string => {
