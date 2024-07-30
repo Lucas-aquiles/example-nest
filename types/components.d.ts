@@ -46,6 +46,25 @@ export type MainAwardsProps={
 
 }| null;
 
+export type WeeklyAwardsProps={
+  id: number;
+  title: string;
+  isActive: boolean;
+
+}| null;
+
+export type StepsProps={
+  id: number;
+  isActive: boolean;
+   one: any,
+  two: any,
+  three: any,
+  imageSteps:any,
+  stepsButton:any
+
+
+}| null;
+
 
 
 

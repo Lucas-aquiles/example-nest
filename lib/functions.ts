@@ -1,4 +1,4 @@
-import {ImageAttributesProps, SeoAttributesProps,HomeBannerProps,IntroductionProps,MainAwardsProps} from '../types/components';
+import {ImageAttributesProps, SeoAttributesProps,HomeBannerProps,IntroductionProps,MainAwardsProps,WeeklyAwardsProps,StepsProps} from '../types/components';
 
 export const classNames = (...classes: Array<string | boolean | undefined>) => {
   return classes.filter(Boolean).join(' ');
@@ -77,6 +77,40 @@ const getmainAwardsAttributes = (mainAwards: any): MainAwardsProps => {
 
 
 
+const getweeklyAwardsAttributes = (mainAwards: any): WeeklyAwardsProps => {
+  const attributesFormatted: WeeklyAwardsProps = {
+    id: mainAwards?.id,
+    title: mainAwards?.title,
+    isActive: mainAwards?.isActive,
+
+   
+  };
+
+  return attributesFormatted || null;
+};
+
+
+
+const getStepsAttributes = (steps: any): StepsProps => {
+  const attributesFormatted: StepsProps = {
+    id: steps?.id,
+    isActive: steps?.isActive,
+    one: steps?.one,
+    two: steps?.two,
+    three: steps?.three,
+    imageSteps:steps?.imageSteps,
+    stepsButton:steps?.stepsButton
+
+
+
+
+   
+  };
+
+  return attributesFormatted || null;
+};
+
+
 const validateExist = (info: Record<string, any> | null): null | Record<string, any> => {
   if (!info) return null;
   if (!info.isActive) return null;
@@ -92,8 +126,9 @@ export const parseHomeData = (info: Record<string, any> | null) => ({
   seo: getSeoAttributes(info?.seo),
   homeBanner: getHomeBannerAttibutes(info?.homeBanner),
   introduction: getIntroductionAttributes(info?.introduction),
-  mainAwards: getmainAwardsAttributes(info?.mainAwards)
-
+  mainAwards: getmainAwardsAttributes(info?.mainAwards),
+  weeklyAwards: getweeklyAwardsAttributes(info?.weeklyAwards),
+  steps: getStepsAttributes(info?.steps),
 
 });
 

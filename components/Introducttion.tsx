@@ -14,6 +14,8 @@ const Introducttion = ({data}: any) => {
         <ImageContainer
           image={image}
           className="  h-[150px] w-full  sm:h-[500px] sm:w-[500px]"
+          imageClassName="object-cover rounded-xl" // Ajusta la imagen para cubrir el contenedor
+
           priority
         />
 
