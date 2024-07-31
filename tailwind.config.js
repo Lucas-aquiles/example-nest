@@ -5,17 +5,12 @@ module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      height:{
-        '150':'35rem',
-        '200':'40rem',
-        '250':'45rem',
-        '300':'50rem',
-        '500':'0.09rem',
-
-
-
-
-
+      height: {
+        150: '35rem',
+        200: '40rem',
+        250: '45rem',
+        300: '50rem',
+        500: '0.09rem',
       },
       colors: {
         primary: {
@@ -30,6 +25,9 @@ module.exports = {
           700: '#8e0057',
           800: '#5e003a',
           900: '#2f001d',
+        },
+        green: {
+          500: '#32CD32', // LimeGreen
         },
         secondary: {
           100: '#F5F3FB',
@@ -48,7 +46,7 @@ module.exports = {
           300: '#E8EAF2',
           400: '#A1A9AF',
           500: '#979797',
-          600: '#9D85D8'
+          600: '#9D85D8',
         },
         complementary: '#E8EAF2',
         title: '#282f39',
@@ -78,16 +76,16 @@ module.exports = {
       fontFamily: {
         sans: ['Nunito Sans', ...defaultTheme.fontFamily.sans],
       },
-      boxShadow: {
-      },
+      boxShadow: {},
       screens: {
-        medium: { raw: '(min-height: 600px)' },
-        tall: { raw: '(min-height: 900px)' },
-        semilarge: { raw: '(min-width: 1400px)' },
+        medium: {raw: '(min-height: 600px)'},
+        tall: {raw: '(min-height: 900px)'},
+        semilarge: {raw: '(min-width: 1400px)'},
       },
-      spacing: {
+      spacing: {},
+      backgroundImage: {
+        'gradient-to-r': 'linear-gradient(to right, #000000, #32CD32)',
       },
-      
     },
   },
   plugins: [],
