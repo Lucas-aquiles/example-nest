@@ -72,6 +72,8 @@ export type ExclusiveBenefitsProps={
   content: any;
   card01: any;
   card02: any;
+  card01Url:string;
+  card02Url
 }| null;
 
 

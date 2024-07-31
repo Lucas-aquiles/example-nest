@@ -3,12 +3,11 @@ import ImageContainer from './ImageContainer';
 
 const ExclusiveBenefits = ({data}: any) => {
   const image = {
-    original: 'https://sb.kaleidousercontent.com/67418/960x550/d1e78c2a25/individuals-a.png',
+    original: `https://rifa-club-strapi-develop.onrender.com${data.card01Url}`,
     alt: 'introducction',
   };
   const imageCard01 = data.card01.benefitCardImage ? `https://rifa-club-strapi-develop.onrender.com${data.card01.benefitCardImage}` : '';
   console.log("=================================================================================");
-  console.log(data);
   return (
     <div className="inset-0 h-auto bg-black py-8 px-4">
       <div className="mx-auto max-w-screen-lg flex flex-col lg:flex-row items-center lg:justify-between">

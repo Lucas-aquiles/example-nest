@@ -112,7 +112,10 @@ const getexclusiveBenefitsAttributes = (exclusiveBenefits: any): ExclusiveBenefi
     title: exclusiveBenefits?.title,
     content: exclusiveBenefits?.content,
     card01: exclusiveBenefits?.card01,
-    card02: exclusiveBenefits?.card02
+    card01Url:exclusiveBenefits?.card01.benefitCardImage.data.attributes.formats.thumbnail.url,
+    card02: exclusiveBenefits?.card02,
+    card02Url:exclusiveBenefits?.card02.benefitCardImage.data.attributes.formats.thumbnail.url,
+    
   };
 
   return attributesFormatted || null;
