@@ -12,26 +12,26 @@ import WeeklyAwards from '../components/WeeklyAwards';
 import Steps from '../components/Steps';
 
 const HomePage = ({attributes}: HomeProps) => {
-  const {seo, homeBanner, introduction, mainAwards, weeklyAwards,steps} = useMemo(
+  const {seo, homeBanner, introduction, mainAwards, weeklyAwards, steps} = useMemo(
     () => parseHomeData(attributes),
     [attributes]
   );
   if (!attributes) return <Custom500 />;
   return (
-    <BaseLayout seo={seo}>
+    <BaseLayout seo={seo} homeBanner={homeBanner}>
+      {/* why do i need to put this here??? */}
       {homeBanner && <HomeBanner data={homeBanner} />}
       {introduction && <Introducttion data={introduction} />}
       {mainAwards && <MainAwards data={mainAwards} />}
-      {weeklyAwards && <WeeklyAwards  data={weeklyAwards}/>}
-      {steps && <Steps data={steps}/>
- }
+      {weeklyAwards && <WeeklyAwards data={weeklyAwards} />}
+      {steps && <Steps data={steps} />}
     </BaseLayout>
   );
 };
 
 export async function getServerSideProps(context: ServerSideContext) {
   const [data] = await Promise.all([getStrapiData('home')]);
-  
+
   // console.log(JSON.stringify(data))
   return {props: {attributes: data?.data?.attributes || null}};
 }
