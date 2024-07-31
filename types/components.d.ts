@@ -56,7 +56,7 @@ export type WeeklyAwardsProps={
 export type StepsProps={
   id: number;
   isActive: boolean;
-   one: any,
+  one: any,
   two: any,
   three: any,
   imageSteps:any,
@@ -65,6 +65,14 @@ export type StepsProps={
 
 }| null;
 
+export type ExclusiveBenefitsProps={
+  id: number;
+  isActive: boolean;
+  title: any;
+  content: any;
+  card01: any;
+  card02: any;
+}| null;
 
 
 

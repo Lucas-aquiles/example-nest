@@ -10,9 +10,10 @@ import MainAwards from '../components/MainAwards';
 import HomeBanner from '../components/HomeBanner';
 import WeeklyAwards from '../components/WeeklyAwards';
 import Steps from '../components/Steps';
+import ExclusiveBenefits from '../components/ExclusiveBenefits';
 
 const HomePage = ({attributes}: HomeProps) => {
-  const {seo, homeBanner, introduction, mainAwards, weeklyAwards,steps} = useMemo(
+  const {seo, homeBanner, introduction, mainAwards, weeklyAwards,steps, exclusiveBenefits} = useMemo(
     () => parseHomeData(attributes),
     [attributes]
   );
@@ -23,8 +24,8 @@ const HomePage = ({attributes}: HomeProps) => {
       {introduction && <Introducttion data={introduction} />}
       {mainAwards && <MainAwards data={mainAwards} />}
       {weeklyAwards && <WeeklyAwards  data={weeklyAwards}/>}
-      {steps && <Steps data={steps}/>
- }
+      {steps && <Steps data={steps}/>}
+      {exclusiveBenefits && <ExclusiveBenefits  data={exclusiveBenefits}/>}
     </BaseLayout>
   );
 };

@@ -1,4 +1,4 @@
-import {ImageAttributesProps, SeoAttributesProps,HomeBannerProps,IntroductionProps,MainAwardsProps,WeeklyAwardsProps,StepsProps} from '../types/components';
+import {ImageAttributesProps, SeoAttributesProps,HomeBannerProps,IntroductionProps,MainAwardsProps,WeeklyAwardsProps,StepsProps,ExclusiveBenefitsProps} from '../types/components';
 
 export const classNames = (...classes: Array<string | boolean | undefined>) => {
   return classes.filter(Boolean).join(' ');
@@ -100,11 +100,19 @@ const getStepsAttributes = (steps: any): StepsProps => {
     three: steps?.three,
     imageSteps:steps?.imageSteps,
     stepsButton:steps?.stepsButton
+  };
 
+  return attributesFormatted || null;
+};
 
-
-
-   
+const getexclusiveBenefitsAttributes = (exclusiveBenefits: any): ExclusiveBenefitsProps => {
+  const attributesFormatted: ExclusiveBenefitsProps = {
+    id: exclusiveBenefits?.id,
+    isActive: exclusiveBenefits?.isActive,
+    title: exclusiveBenefits?.title,
+    content: exclusiveBenefits?.content,
+    card01: exclusiveBenefits?.card01,
+    card02: exclusiveBenefits?.card02
   };
 
   return attributesFormatted || null;
@@ -129,6 +137,7 @@ export const parseHomeData = (info: Record<string, any> | null) => ({
   mainAwards: getmainAwardsAttributes(info?.mainAwards),
   weeklyAwards: getweeklyAwardsAttributes(info?.weeklyAwards),
   steps: getStepsAttributes(info?.steps),
+  exclusiveBenefits: getexclusiveBenefitsAttributes(info?.exclusiveBenefits),
 
 });
 

@@ -4,7 +4,7 @@ import BackgroundPage from './ImageBackground';
 import ImageContainer from './ImageContainer';
 
 const Steps = ({data}: any) => {
-  console.log('ver', data);
+  /*console.log('ver', data);*/
   const image = {
     original: 'https://sb.kaleidousercontent.com/67418/960x550/d1e78c2a25/individuals-a.png',
     alt: 'introducction',

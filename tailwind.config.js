@@ -74,6 +74,7 @@ module.exports = {
           text: '#d70903',
           background: '#fef2f1',
         },
+        cardBackground: '#181818',
       },
       fontFamily: {
         sans: ['Nunito Sans', ...defaultTheme.fontFamily.sans],
