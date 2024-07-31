@@ -3,8 +3,9 @@ import {LayoutProps} from '../../types';
 import GlobalLoader from '../GlobalLoader';
 
 import Footer from './Footer';
-const BaseLayout = ({seo, children, }: LayoutProps ) => {
-  
+import Header from './Header';
+
+const BaseLayout = ({seo, children}: LayoutProps) => {
   return (
     <>
       <Head>
@@ -31,7 +32,7 @@ const BaseLayout = ({seo, children, }: LayoutProps ) => {
         <meta name="google-site-verification" content="pending-add-site-code" />
       </Head>
 
-  
+      <Header />
 
       <GlobalLoader />
 
