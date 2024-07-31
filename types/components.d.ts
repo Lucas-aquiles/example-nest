@@ -1,4 +1,4 @@
-import {CSSProperties, Dispatch, ReactNode, SetStateAction} from 'react';
+import { CSSProperties, Dispatch, ReactNode, SetStateAction } from 'react';
 import HomeBanner from '../components/layout/HomeBanner';
 
 export type ImageAttributesProps = {
@@ -21,52 +21,43 @@ export type SeoAttributesProps = {
   };
 } | null;
 
-export type HomeBannerProps={
+export type HomeBannerProps = {
   id: number;
   title: string;
   isActive: boolean;
-  backgroundImage:any;
-  suscribeNow:any
+  backgroundImage: any;
+  suscribeNow: any;
+} | null;
 
-}| null;
-
-export type IntroductionProps={
+export type IntroductionProps = {
   id: number;
   title: string;
   isActive: boolean;
-  backgroundImage:any;
-  content:string
+  backgroundImage: any;
+  content: string;
+} | null;
 
-}| null;
-
-export type MainAwardsProps={
+export type MainAwardsProps = {
   id: number;
   title: string;
   isActive: boolean;
+} | null;
 
-}| null;
-
-export type WeeklyAwardsProps={
+export type WeeklyAwardsProps = {
   id: number;
   title: string;
   isActive: boolean;
+} | null;
 
-}| null;
-
-export type StepsProps={
+export type StepsProps = {
   id: number;
   isActive: boolean;
-   one: any,
-  two: any,
-  three: any,
-  imageSteps:any,
-  stepsButton:any
-
-
-}| null;
-
-
-
+  one: any;
+  two: any;
+  three: any;
+  imageSteps: any;
+  stepsButton: any;
+} | null;
 
 export interface HeroProps {
   data: {
@@ -83,3 +74,14 @@ export interface ImageContainerProps {
   objectFit?: string;
   priority?: boolean;
 }
+
+// Nueva definición de AboutUsProps
+export type AboutUsProps = {
+  id: number;
+  title: string;
+  isActive: boolean;
+  backgroundImage: any;
+  content: string;
+  imageLeft: any;
+  aboutUsButton: any;
+} | null;

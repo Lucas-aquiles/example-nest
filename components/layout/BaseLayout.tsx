@@ -3,14 +3,8 @@ import {LayoutProps} from '../../types';
 import GlobalLoader from '../GlobalLoader';
 
 import Footer from './Footer';
-import Header from './Header';
-import HomeBanner from '../HomeBanner';
-
-const BaseLayout = ({seo, children, homeBanner}: LayoutProps & {homeBanner: any}) => {
-  const buttonProps = {
-    buttonText: homeBanner.suscribeNow.buttonText,
-    buttonUrl: homeBanner.suscribeNow.buttonUrl,
-  };
+const BaseLayout = ({seo, children, }: LayoutProps ) => {
+  
   return (
     <>
       <Head>
@@ -37,7 +31,7 @@ const BaseLayout = ({seo, children, homeBanner}: LayoutProps & {homeBanner: any}
         <meta name="google-site-verification" content="pending-add-site-code" />
       </Head>
 
-      <Header buttonProps={buttonProps} />
+  
 
       <GlobalLoader />
 

@@ -30,3 +30,4 @@ const Introducttion = ({data}: any) => {
 };
 
 export default Introducttion;
+
