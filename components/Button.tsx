@@ -6,7 +6,7 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   children: React.ReactNode;
   href?: string;
   size: keyof typeof sizeClasses;
-  color: 'primary' | 'secondary' | 'opacity';
+  color: 'primary' | 'secondary' | 'opacity' | 'green';
   variant: keyof typeof variantClasses;
   fullWidth?: boolean;
   cypress: string;
@@ -32,12 +32,15 @@ const colorClasses = {
   primary_contained: `border-primary-500 bg-primary-500 hover:bg-primary-600 hover:border-primary-600`,
   secondary_contained: `border-secondary-500 bg-secondary-500 hover:bg-secondary-600 hover:border-secondary-600`,
   opacity_contained: `font-bold text-body-1 hover:text-gray-900`,
+  green_contained: `border-green-500 bg-green-500 hover:bg-green-600 hover:border-green-600`, // Added
   primary_outlined: 'text-primary-500 border-primary-500 hover:bg-primary-200',
   secondary_outlined: 'text-secondary-500 border-secondary-500 hover:bg-secondary-200',
   opacity_outlined: 'font-bold text-body-1 hover:text-gray-900',
+  green_outlined: 'text-green-500 border-green-500 hover:bg-green-200', // Added
   primary_transparent: 'text-primary-500 hover:text-primary-600',
   secondary_transparent: 'text-secondary-500 hover:text-secondary-600',
   opacity_transparent: 'font-bold text-body-1 hover:text-gray-900',
+  green_transparent: 'text-green-500 hover:text-green-600', // Added
 };
 
 const Button = ({

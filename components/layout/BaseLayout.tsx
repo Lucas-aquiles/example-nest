@@ -6,8 +6,11 @@ import Footer from './Footer';
 import Header from './Header';
 import HomeBanner from '../HomeBanner';
 
-const BaseLayout = ({seo, children}: LayoutProps) => {
-
+const BaseLayout = ({seo, children, homeBanner}: LayoutProps & {homeBanner: any}) => {
+  const buttonProps = {
+    buttonText: homeBanner.suscribeNow.buttonText,
+    buttonUrl: homeBanner.suscribeNow.buttonUrl,
+  };
   return (
     <>
       <Head>
@@ -34,9 +37,7 @@ const BaseLayout = ({seo, children}: LayoutProps) => {
         <meta name="google-site-verification" content="pending-add-site-code" />
       </Head>
 
-      <Header />
-      
-      
+      <Header buttonProps={buttonProps} />
 
       <GlobalLoader />
 
