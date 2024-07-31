@@ -18,7 +18,7 @@ const HomePage = ({attributes}: HomeProps) => {
   );
   if (!attributes) return <Custom500 />;
   return (
-    <BaseLayout seo={seo} homeBanner={homeBanner}>
+    <BaseLayout seo={seo}>
       {/* why do i need to put this here????? */}
       {homeBanner && <HomeBanner data={homeBanner} />}
       {introduction && <Introducttion data={introduction} />}
