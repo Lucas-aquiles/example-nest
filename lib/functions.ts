@@ -1,4 +1,4 @@
-import {ImageAttributesProps, SeoAttributesProps,HomeBannerProps,IntroductionProps,MainAwardsProps,WeeklyAwardsProps,StepsProps} from '../types/components';
+import {ImageAttributesProps, SeoAttributesProps,HomeBannerProps,IntroductionProps,MainAwardsProps,WeeklyAwardsProps, PlansIntroductionProps,StepsProps} from '../types/components';
 
 export const classNames = (...classes: Array<string | boolean | undefined>) => {
   return classes.filter(Boolean).join(' ');
@@ -100,15 +100,37 @@ const getStepsAttributes = (steps: any): StepsProps => {
     three: steps?.three,
     imageSteps:steps?.imageSteps,
     stepsButton:steps?.stepsButton
-
-
-
-
-   
   };
 
   return attributesFormatted || null;
 };
+
+
+const getPlansIntroduction = (plansIntroduction: any): PlansIntroductionProps => {
+  const attributesFormatted: PlansIntroductionProps = {
+    id: plansIntroduction?.id,
+    isActive: plansIntroduction?.isActive,
+    title: plansIntroduction?.title,
+    content: plansIntroduction?.content,
+  
+  };
+
+  return attributesFormatted || null;
+};
+
+const getPlanMensual = (mensualData: any): any => {
+  const attributesFormatted: any = {
+    planTitle: mensualData[0]?.attributes.planTitle ,
+    planDescription : mensualData[0]?.attributes.planDescription,
+    planPrice : mensualData[0]?.attributes.planPrice,
+    buttonSuscribePlan: mensualData[0]?.attributes.buttonSuscribePlan,
+
+  
+  };
+
+  return attributesFormatted || null;
+};
+
 
 
 const validateExist = (info: Record<string, any> | null): null | Record<string, any> => {
@@ -129,8 +151,15 @@ export const parseHomeData = (info: Record<string, any> | null) => ({
   mainAwards: getmainAwardsAttributes(info?.mainAwards),
   weeklyAwards: getweeklyAwardsAttributes(info?.weeklyAwards),
   steps: getStepsAttributes(info?.steps),
+  plansIntroduction: getPlansIntroduction(info?.plansIntroduction)
 
 });
+
+export const parsePlansData = (info: Record<string, any> | null) => ({
+  planMensual: getPlanMensual(info)
+});
+
+
 
 export const buildQueryParams = (params?: Record<string, unknown>): string => {
   const auxParams = new URLSearchParams();
