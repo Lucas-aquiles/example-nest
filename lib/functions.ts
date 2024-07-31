@@ -1,4 +1,13 @@
-import {ImageAttributesProps, SeoAttributesProps,HomeBannerProps,IntroductionProps,MainAwardsProps,WeeklyAwardsProps, PlansIntroductionProps,StepsProps} from '../types/components';
+import {
+  ImageAttributesProps,
+  SeoAttributesProps,
+  HomeBannerProps,
+  IntroductionProps,
+  MainAwardsProps,
+  WeeklyAwardsProps,
+  PlansIntroductionProps,
+  StepsProps,
+} from '../types/components';
 
 export const classNames = (...classes: Array<string | boolean | undefined>) => {
   return classes.filter(Boolean).join(' ');
@@ -40,24 +49,19 @@ const getHomeBannerAttibutes = (homeBanner: any): HomeBannerProps => {
     title: homeBanner?.title,
     isActive: homeBanner?.isActive,
     backgroundImage: homeBanner?.backgroundImage,
-    suscribeNow: homeBanner?.suscribeNow
-
-   
+    suscribeNow: homeBanner?.suscribeNow,
   };
 
   return attributesFormatted || null;
 };
-
 
 const getIntroductionAttributes = (introduction: any): IntroductionProps => {
   const attributesFormatted: IntroductionProps = {
     id: introduction?.id,
     title: introduction?.title,
     isActive: introduction?.isActive,
-    content : introduction?.content,
+    content: introduction?.content,
     backgroundImage: introduction?.image,
-
-   
   };
 
   return attributesFormatted || null;
@@ -68,28 +72,20 @@ const getmainAwardsAttributes = (mainAwards: any): MainAwardsProps => {
     id: mainAwards?.id,
     title: mainAwards?.title,
     isActive: mainAwards?.isActive,
-
-   
   };
 
   return attributesFormatted || null;
 };
-
-
 
 const getweeklyAwardsAttributes = (mainAwards: any): WeeklyAwardsProps => {
   const attributesFormatted: WeeklyAwardsProps = {
     id: mainAwards?.id,
     title: mainAwards?.title,
     isActive: mainAwards?.isActive,
-
-   
   };
 
   return attributesFormatted || null;
 };
-
-
 
 const getStepsAttributes = (steps: any): StepsProps => {
   const attributesFormatted: StepsProps = {
@@ -98,13 +94,12 @@ const getStepsAttributes = (steps: any): StepsProps => {
     one: steps?.one,
     two: steps?.two,
     three: steps?.three,
-    imageSteps:steps?.imageSteps,
-    stepsButton:steps?.stepsButton
+    imageSteps: steps?.imageSteps,
+    stepsButton: steps?.stepsButton,
   };
 
   return attributesFormatted || null;
 };
-
 
 const getPlansIntroduction = (plansIntroduction: any): PlansIntroductionProps => {
   const attributesFormatted: PlansIntroductionProps = {
@@ -112,26 +107,32 @@ const getPlansIntroduction = (plansIntroduction: any): PlansIntroductionProps =>
     isActive: plansIntroduction?.isActive,
     title: plansIntroduction?.title,
     content: plansIntroduction?.content,
-  
   };
 
   return attributesFormatted || null;
 };
 
-const getPlanMensual = (mensualData: any): any => {
+const getPlanMensual = (monthlyData: any): any => {
   const attributesFormatted: any = {
-    planTitle: mensualData[0]?.attributes.planTitle ,
-    planDescription : mensualData[0]?.attributes.planDescription,
-    planPrice : mensualData[0]?.attributes.planPrice,
-    buttonSuscribePlan: mensualData[0]?.attributes.buttonSuscribePlan,
-
-  
+    planTitle: monthlyData?.attributes.planTitle,
+    planDescription: monthlyData?.attributes.planDescription,
+    planPrice: monthlyData?.attributes.planPrice,
+    planPeriodDescription: monthlyData?.attributes.planPeriodDescription,
+    buttonSuscribePlan: monthlyData?.attributes.buttonSuscribePlan,
   };
-
   return attributesFormatted || null;
 };
 
-
+const getPlanAnual = (annualData: any): any => {
+  const attributesFormatted: any = {
+    planTitle: annualData?.attributes.planTitle,
+    planDescription: annualData?.attributes.planDescription,
+    planPrice: annualData?.attributes.planPrice,
+    planPeriodDescription: annualData?.attributes.planPeriodDescription,
+    buttonSuscribePlan: annualData?.attributes.buttonSuscribePlan,
+  };
+  return attributesFormatted || null;
+};
 
 const validateExist = (info: Record<string, any> | null): null | Record<string, any> => {
   if (!info) return null;
@@ -151,15 +152,18 @@ export const parseHomeData = (info: Record<string, any> | null) => ({
   mainAwards: getmainAwardsAttributes(info?.mainAwards),
   weeklyAwards: getweeklyAwardsAttributes(info?.weeklyAwards),
   steps: getStepsAttributes(info?.steps),
-  plansIntroduction: getPlansIntroduction(info?.plansIntroduction)
-
+  plansIntroduction: getPlansIntroduction(info?.plansIntroduction),
 });
 
-export const parsePlansData = (info: Record<string, any> | null) => ({
-  planMensual: getPlanMensual(info)
-});
+export const parsePlansData = (info: Record<string, any> | null) => {
+  const dataMonthly = info ? info[0] : null;
+  const dataAnnual = info ? info[1] : null;
 
-
+  return {
+    monthlyPlan: getPlanMensual(dataMonthly),
+    annualPlan: getPlanAnual(dataAnnual),
+  };
+};
 
 export const buildQueryParams = (params?: Record<string, unknown>): string => {
   const auxParams = new URLSearchParams();

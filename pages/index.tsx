@@ -2,7 +2,7 @@ import {useMemo} from 'react';
 import {ServerSideContext} from '../types';
 import {HomeProps} from '../types/home';
 import {getStrapiData} from '../lib/requests';
-import {parseHomeData,parsePlansData} from '../lib/functions';
+import {parseHomeData, parsePlansData} from '../lib/functions';
 import BaseLayout from '../components/layout/BaseLayout';
 import Custom500 from './500';
 import Introducttion from '../components/Introducttion';
@@ -13,16 +13,10 @@ import Steps from '../components/Steps';
 import PlansIntroduction from '../components/PlansIntroduction';
 
 const HomePage = ({attributes}: HomeProps) => {
-  const {seo, homeBanner, introduction, mainAwards, weeklyAwards,steps,plansIntroduction } = useMemo(
-    () => parseHomeData(attributes?.homeAttributes),
-    [attributes]
-  );
+  const {seo, homeBanner, introduction, mainAwards, weeklyAwards, steps, plansIntroduction} =
+    useMemo(() => parseHomeData(attributes?.homeAttributes), [attributes]);
 
-  const {} = useMemo(
-    () => parsePlansData(attributes?.plansAttributes),
-    [attributes]
-  );
-
+  const {monthlyPlan, annualPlan} = useMemo(() => parsePlansData(attributes?.plansAttributes), [attributes]);
 
   if (!attributes) return <Custom500 />;
   return (
@@ -30,23 +24,25 @@ const HomePage = ({attributes}: HomeProps) => {
       {homeBanner && <HomeBanner data={homeBanner} />}
       {introduction && <Introducttion data={introduction} />}
       {mainAwards && <MainAwards data={mainAwards} />}
-      {weeklyAwards && <WeeklyAwards  data={weeklyAwards}/>}
-      {steps && <Steps data={steps}/>}
-      {plansIntroduction && <PlansIntroduction data={plansIntroduction}/>}
- 
+      {weeklyAwards && <WeeklyAwards data={weeklyAwards} />}
+      {steps && <Steps data={steps} />}
+      {plansIntroduction && <PlansIntroduction data={plansIntroduction}  annualPlan={annualPlan} monthlyPlan={monthlyPlan}/>}
     </BaseLayout>
   );
 };
 
 export async function getServerSideProps(context: ServerSideContext) {
-  const [homeData,plansData] = await Promise.all([getStrapiData('home'), getStrapiData('plans')]);
-  
-  console.log("aaaaaaaaaaaaa",JSON.stringify(plansData.data[0]))
-  console.log("bbbbbbb",JSON.stringify(plansData.data[1]))
+  const [homeData, plansData] = await Promise.all([getStrapiData('home'), getStrapiData('plans')]);
+  // console.log( JSON.stringify(plansData.data[0]));
 
-  return {props: {attributes: {homeAttributes: homeData?.data?.attributes || null,
-          plansAttributes :plansData?.data || null}
-}};
+  return {
+    props: {
+      attributes: {
+        homeAttributes: homeData?.data?.attributes || null,
+        plansAttributes: plansData?.data || null,
+      },
+    },
+  };
 }
 
 export default HomePage;

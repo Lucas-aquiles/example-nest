@@ -2,7 +2,6 @@ import React from 'react';
 import Slider from 'react-slick';
 import Card from './Card';
 import ImageContainer from './ImageContainer';
-import "./carousel.module.css"
 
 
 
