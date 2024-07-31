@@ -1,4 +1,17 @@
+<<<<<<< HEAD
 import {ImageAttributesProps, SeoAttributesProps,HomeBannerProps,IntroductionProps,MainAwardsProps,WeeklyAwardsProps,StepsProps,ExclusiveBenefitsProps} from '../types/components';
+=======
+import { 
+  ImageAttributesProps, 
+  SeoAttributesProps, 
+  HomeBannerProps, 
+  IntroductionProps, 
+  MainAwardsProps, 
+  WeeklyAwardsProps, 
+  StepsProps, 
+  AboutUsProps 
+} from '../types/components';
+>>>>>>> 89093810102030e0b54c26ff655a621d77be0cd2
 
 export const classNames = (...classes: Array<string | boolean | undefined>) => {
   return classes.filter(Boolean).join(' ');
@@ -34,62 +47,52 @@ const getSeoAttributes = (seo: any): SeoAttributesProps => {
   return attributesFormatted || null;
 };
 
-const getHomeBannerAttibutes = (homeBanner: any): HomeBannerProps => {
+const getHomeBannerAttributes = (homeBanner: any): HomeBannerProps => {
   const attributesFormatted: HomeBannerProps = {
     id: homeBanner?.id,
     title: homeBanner?.title,
     isActive: homeBanner?.isActive,
     backgroundImage: homeBanner?.backgroundImage,
     suscribeNow: homeBanner?.suscribeNow
-
-   
   };
 
   return attributesFormatted || null;
 };
-
 
 const getIntroductionAttributes = (introduction: any): IntroductionProps => {
   const attributesFormatted: IntroductionProps = {
     id: introduction?.id,
     title: introduction?.title,
     isActive: introduction?.isActive,
-    content : introduction?.content,
+    content: introduction?.content,
     backgroundImage: introduction?.image,
-
-   
   };
 
   return attributesFormatted || null;
 };
 
-const getmainAwardsAttributes = (mainAwards: any): MainAwardsProps => {
+
+
+
+const getMainAwardsAttributes = (mainAwards: any): MainAwardsProps => {
   const attributesFormatted: MainAwardsProps = {
     id: mainAwards?.id,
     title: mainAwards?.title,
     isActive: mainAwards?.isActive,
-
-   
   };
 
   return attributesFormatted || null;
 };
 
-
-
-const getweeklyAwardsAttributes = (mainAwards: any): WeeklyAwardsProps => {
+const getWeeklyAwardsAttributes = (weeklyAwards: any): WeeklyAwardsProps => {
   const attributesFormatted: WeeklyAwardsProps = {
-    id: mainAwards?.id,
-    title: mainAwards?.title,
-    isActive: mainAwards?.isActive,
-
-   
+    id: weeklyAwards?.id,
+    title: weeklyAwards?.title,
+    isActive: weeklyAwards?.isActive,
   };
 
   return attributesFormatted || null;
 };
-
-
 
 const getStepsAttributes = (steps: any): StepsProps => {
   const attributesFormatted: StepsProps = {
@@ -98,6 +101,7 @@ const getStepsAttributes = (steps: any): StepsProps => {
     one: steps?.one,
     two: steps?.two,
     three: steps?.three,
+<<<<<<< HEAD
     imageSteps:steps?.imageSteps,
     stepsButton:steps?.stepsButton
   };
@@ -116,11 +120,30 @@ const getexclusiveBenefitsAttributes = (exclusiveBenefits: any): ExclusiveBenefi
     card02: exclusiveBenefits?.card02,
     card02Url:exclusiveBenefits?.card02.benefitCardImage.data.attributes.formats.thumbnail.url,
     
+=======
+    imageSteps: steps?.imageSteps,
+    stepsButton: steps?.stepsButton,
+>>>>>>> 89093810102030e0b54c26ff655a621d77be0cd2
   };
 
   return attributesFormatted || null;
 };
 
+
+const getAboutUsAttributes = (AboutUs: any): AboutUsProps => {
+  const attributesFormatted: AboutUsProps = {
+    id: AboutUs?.id,
+    title: AboutUs?.title,
+    isActive: AboutUs?.isActive,
+    content: AboutUs?.content,
+    backgroundImage:AboutUs?.backgroundImage,
+    imageLeft: AboutUs?.imageLeft,
+    aboutUsButton: AboutUs?.aboutUsButton,
+
+  };
+
+  return attributesFormatted || null;
+};
 
 const validateExist = (info: Record<string, any> | null): null | Record<string, any> => {
   if (!info) return null;
@@ -128,6 +151,7 @@ const validateExist = (info: Record<string, any> | null): null | Record<string, 
 
   return info;
 };
+<<<<<<< HEAD
 
 export const parseHomeData = (info: Record<string, any> | null) => ({
   hero: validateExist(info?.hero) && {
@@ -143,6 +167,23 @@ export const parseHomeData = (info: Record<string, any> | null) => ({
   exclusiveBenefits: getexclusiveBenefitsAttributes(info?.exclusiveBenefits),
 
 });
+=======
+export const parseHomeData = (info: Record<string, any> | null) => {
+  return {
+    hero: validateExist(info?.hero) && {
+      title: info?.hero?.title,
+      images: getImageAttributes(info?.hero?.image),
+    },
+    seo: getSeoAttributes(info?.seo),
+    homeBanner: getHomeBannerAttributes(info?.homeBanner),
+    introduction: getIntroductionAttributes(info?.introduction),
+    mainAwards: getMainAwardsAttributes(info?.mainAwards),
+    weeklyAwards: getWeeklyAwardsAttributes(info?.weeklyAwards),
+    steps: getStepsAttributes(info?.steps),
+    aboutUs: getAboutUsAttributes(info?.AboutUs), // Añadir esta línea
+  };
+};
+>>>>>>> 89093810102030e0b54c26ff655a621d77be0cd2
 
 export const buildQueryParams = (params?: Record<string, unknown>): string => {
   const auxParams = new URLSearchParams();
