@@ -4,7 +4,6 @@ import BackgroundPage from './ImageBackground';
 
 const HomeBanner = ({data}: HomeBannerProps) => {
   const url = data?.backgroundImage.data[0].attributes.url;
-  console.log('aca lelgue ', data.backgroundImage.data[0].attributes.url);
   const images = {
     original: `https://rifa-club-strapi-develop.onrender.com${url}`,
     alt: 'Picture',
@@ -18,6 +17,8 @@ const HomeBanner = ({data}: HomeBannerProps) => {
             <Button>{data.suscribeNow.buttonText}</Button>
           </div>
         </div>
+
+        
       </BackgroundPage>
     </div>
   );
