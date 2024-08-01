@@ -1,4 +1,4 @@
-import {CSSProperties, Dispatch, ReactNode, SetStateAction} from 'react';
+import { CSSProperties, Dispatch, ReactNode, SetStateAction } from 'react';
 import HomeBanner from '../components/layout/HomeBanner';
 
 export type ImageAttributesProps = {
@@ -52,18 +52,32 @@ export type WeeklyAwardsProps = {
 export type StepsProps = {
   id: number;
   isActive: boolean;
-  one: any;
-  two: any;
-  three: any;
-  imageSteps: any;
-  stepsButton: any;
-} | null;
+  one: any,
+  two: any,
+  three: any,
+  imageSteps:any,
+  stepsButton:any
+}| null;
+
+export type ExclusiveBenefitsProps={
+  id: number;
+  isActive: boolean;
+  title: any;
+  content: any;
+  card01: any;
+  card02: any;
+  card01Url:string;
+  card02Url
+}| null;
+
+
 export type PlansIntroductionProps = {
   id: number;
   isActive: boolean;
   title: string;
   content: string;
 } | null;
+
 
 export interface HeroProps {
   data: {
@@ -80,3 +94,14 @@ export interface ImageContainerProps {
   objectFit?: string;
   priority?: boolean;
 }
+
+
+export type AboutUsProps = {
+  id: number;
+  title: string;
+  isActive: boolean;
+  backgroundImage: any;
+  content: string;
+  imageLeft: any;
+  aboutUsButton: any;
+} | null;

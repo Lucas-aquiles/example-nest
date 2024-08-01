@@ -9,12 +9,11 @@ const HomeBanner = ({data}: HomeBannerProps) => {
     alt: 'Picture',
   };
   return (
-    <div className="h-auto  bg-black	">
+    <div className="relative z-0  h-auto bg-black	">
       <BackgroundPage image={images || null} heightContainer="h-200">
-
-        <div className="flex  w-auto flex-col items-center   ">
-          <h1 className="w-96 p-10  text-center text-2xl text-white">{data.title}</h1>
-          <div className="mb-4 text-center">
+        <div className="  relative z-0 flex w-auto flex-col items-center  ">
+          <h1 className=" w-96 p-10  text-center text-2xl text-white">{data.title}</h1>
+          <div className=" mb-4 text-center">
             <Button>{data.suscribeNow.buttonText}</Button>
           </div>
         </div>

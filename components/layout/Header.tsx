@@ -1,32 +1,70 @@
-// import {HeaderProps} from '../../types';
-import Link from 'next/link';
+import {useState} from 'react';
+import {HeaderProps} from '../../types';
 import Button from '../Button';
+import img from '../../public/img/logo.png';
 
-const Header = () => {
-
-  // console.log(props.renderHeader)
+const Header = ({}: HeaderProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
   return (
-    <header className="bg-white shadow-lg">
+    <header className="sticky top-0 z-50 bg-black shadow-lg">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between py-4">
+        <div className="flex h-20 items-center justify-between py-2">
           <div>
-            <a href="#" className="text-lg font-semibold text-gray-800">
+            {/* <a href="#" className="text-lg font-semibold text-gray-800">
               Logo
-            </a>
+            </a> */}
+            <img src={img.src} alt="Logo" className=" h-8 w-auto" />
           </div>
-          <nav>
-            <ul className="flex space-x-4">
-              {/* <li>
-                {  props&&<Button  children={props.renderHeader.link_inicio.button_text}  />
-}
+          <button
+            onClick={toggleMenu}
+            type="button"
+            className="text-white focus:outline-none md:hidden"
+            aria-label="Toggle menu"
+          >
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+          <nav className={`md:flex md:items-center ${isOpen ? 'block' : 'hidden'} md:block`}>
+            <ul
+              className={`mt-2 flex flex-col md:mt-0 md:flex-row md:space-x-4 ${
+                isOpen ? 'block' : 'hidden'
+              } md:flex`}
+            >
+              <li>
+                <a href="#" className="text-green-400 hover:text-white">
+                  Inicio
+                </a>
               </li>
               <li>
-                {  props&&<Button  children={props.renderHeader.Sorteos_link[0].button_text}  />
-}
-              </li> */}
-             
+                <a href="#" className="text-white hover:text-white">
+                  Sorteos
+                </a>
+              </li>
             </ul>
           </nav>
+          <div className="items-center rounded-lg px-3 py-1 text-sm md:flex md:text-base">
+            <Button
+              className="m-4 rounded-lg bg-green-500 px-3 py-1 text-xs text-black hover:bg-green-600 md:text-sm lg:text-base"
+              children="! Suscribete Aqui ¡"
+              href="/home"
+              color="green"
+            ></Button>
+          </div>
         </div>
       </div>
     </header>

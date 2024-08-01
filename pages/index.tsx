@@ -11,25 +11,33 @@ import HomeBanner from '../components/HomeBanner';
 import WeeklyAwards from '../components/WeeklyAwards';
 import Steps from '../components/Steps';
 import PlansIntroduction from '../components/PlansIntroduction';
+import ExclusiveBenefits from '../components/ExclusiveBenefits';
+import AboutUs from '../components/AboutUs';
+
 
 const HomePage = ({attributes}: HomeProps) => {
-  const {seo, homeBanner, introduction, mainAwards, weeklyAwards, steps, plansIntroduction} =
+  const {seo, homeBanner, introduction, mainAwards, weeklyAwards, steps, plansIntroduction,exclusiveBenefits,aboutUs} =
     useMemo(() => parseHomeData(attributes?.homeAttributes), [attributes]);
 
   const {monthlyPlan, annualPlan} = useMemo(() => parsePlansData(attributes?.plansAttributes), [attributes]);
 
+
   if (!attributes) return <Custom500 />;
+
   return (
     <BaseLayout seo={seo}>
+      {/* why do i need to put this here????? */}
       {homeBanner && <HomeBanner data={homeBanner} />}
       {introduction && <Introducttion data={introduction} />}
       {mainAwards && <MainAwards data={mainAwards} />}
       {weeklyAwards && <WeeklyAwards data={weeklyAwards} />}
       {steps && <Steps data={steps} />}
       {plansIntroduction && <PlansIntroduction data={plansIntroduction}  annualPlan={annualPlan} monthlyPlan={monthlyPlan}/>}
+      {exclusiveBenefits && <ExclusiveBenefits  data={exclusiveBenefits}/>}
+      {aboutUs && <AboutUs data={aboutUs} />}
     </BaseLayout>
   );
-};
+}
 
 export async function getServerSideProps(context: ServerSideContext) {
   const [homeData, plansData] = await Promise.all([getStrapiData('home'), getStrapiData('plans')]);
@@ -43,6 +51,7 @@ export async function getServerSideProps(context: ServerSideContext) {
       },
     },
   };
+
 }
 
 export default HomePage;
