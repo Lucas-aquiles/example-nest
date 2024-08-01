@@ -12,14 +12,15 @@ import WeeklyAwards from '../components/WeeklyAwards';
 import Steps from '../components/Steps';
 
 const HomePage = ({attributes}: HomeProps) => {
+  console.log('attributes,', attributes);
   const {seo, homeBanner, introduction, mainAwards, weeklyAwards, steps} = useMemo(
     () => parseHomeData(attributes),
     [attributes]
   );
+
   if (!attributes) return <Custom500 />;
   return (
     <BaseLayout seo={seo}>
-      {/* why do i need to put this here????? */}
       {homeBanner && <HomeBanner data={homeBanner} />}
       {introduction && <Introducttion data={introduction} />}
       {mainAwards && <MainAwards data={mainAwards} />}

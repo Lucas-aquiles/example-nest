@@ -4,7 +4,6 @@ import BackgroundPage from './ImageBackground';
 import ImageContainer from './ImageContainer';
 
 const Steps = ({data}: any) => {
-  console.log('ver', data);
   const image = {
     original: 'https://sb.kaleidousercontent.com/67418/960x550/d1e78c2a25/individuals-a.png',
     alt: 'introducction',
@@ -39,16 +38,14 @@ const Steps = ({data}: any) => {
           </Card>
         </div>
 
-        <div className="w-1/2  relative ">
-        <ImageContainer
-          image={image}
-          className=" h-[29rem] w-full   mb-5 "
-          imageClassName="object-cover  " // Ajusta la imagen para cubrir el contenedor
-
-          priority
-        />
-        <Button>¡{data.stepsButton.buttonText}!</Button>
-
+        <div className="relative  w-1/2 ">
+          <ImageContainer
+            image={image}
+            className=" mb-5 h-[29rem]   w-full "
+            imageClassName="object-cover  " // Ajusta la imagen para cubrir el contenedor
+            priority
+          />
+          <Button>¡{data.stepsButton.buttonText}!</Button>
         </div>
       </div>
     </div>
