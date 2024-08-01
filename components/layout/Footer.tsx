@@ -29,7 +29,7 @@ const Footer = ({}: FooterProps) => {
           {/* Right section */}
           <div className="flex items-center">
             <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-              <img src={icon.src} alt="Insta" className="m-5 h-8 w-auto" />
+              <img src={icon.src} alt="Insta" className="m-5 h-8 w-auto " />
             </a>
           </div>
         </div>

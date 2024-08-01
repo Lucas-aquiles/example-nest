@@ -16,6 +16,7 @@ import AboutUs from '../components/AboutUs';
 
 
 const HomePage = ({attributes}: HomeProps) => {
+
   const {seo, homeBanner, introduction, mainAwards, weeklyAwards, steps, plansIntroduction,exclusiveBenefits,aboutUs} =
     useMemo(() => parseHomeData(attributes?.homeAttributes), [attributes]);
 
@@ -26,7 +27,6 @@ const HomePage = ({attributes}: HomeProps) => {
 
   return (
     <BaseLayout seo={seo}>
-      {/* why do i need to put this here????? */}
       {homeBanner && <HomeBanner data={homeBanner} />}
       {introduction && <Introducttion data={introduction} />}
       {mainAwards && <MainAwards data={mainAwards} />}

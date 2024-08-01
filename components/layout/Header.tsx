@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useContext, RefObject} from 'react';
 import {HeaderProps} from '../../types';
 import Button from '../Button';
 import img from '../../public/img/logo.png';
@@ -8,14 +8,12 @@ const Header = ({}: HeaderProps) => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <header className="sticky top-0 z-50 bg-black shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between py-2">
           <div>
-            {/* <a href="#" className="text-lg font-semibold text-gray-800">
-              Logo
-            </a> */}
             <img src={img.src} alt="Logo" className=" h-8 w-auto" />
           </div>
           <button
@@ -51,7 +49,7 @@ const Header = ({}: HeaderProps) => {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white hover:text-white">
+                <a href="#weekly-awards" className="text-green-400 hover:text-white">
                   Sorteos
                 </a>
               </li>
@@ -61,7 +59,7 @@ const Header = ({}: HeaderProps) => {
             <Button
               className="m-4 rounded-lg bg-green-500 px-3 py-1 text-xs text-black hover:bg-green-600 md:text-sm lg:text-base"
               children="! Suscribete Aqui ¡"
-              href="/home"
+              href="#"
               color="green"
             ></Button>
           </div>

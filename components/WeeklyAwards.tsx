@@ -10,7 +10,7 @@ const WeeklyAwards = ({data}: any) => {
   };
 
   return (
-    <div className="inset-0 h-auto bg-black	 py-10 ">
+    <div id="weekly-awards" className="inset-0 h-auto bg-black	 py-10 ">
       <h1 className="text-center text-4xl font-extrabold text-white ">{data.title}</h1>
       <div>
         <div className=" mx-auto mt-4 h-500 w-2/3 bg-white  "></div>
