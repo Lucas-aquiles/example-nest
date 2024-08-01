@@ -4,7 +4,6 @@ import BackgroundPage from './ImageBackground';
 import ImageContainer from './ImageContainer';
 
 const Steps = ({data}: any) => {
-  /*console.log('ver', data);*/
   const image = {
     original: 'https://sb.kaleidousercontent.com/67418/960x550/d1e78c2a25/individuals-a.png',
     alt: 'introducction',
@@ -12,6 +11,7 @@ const Steps = ({data}: any) => {
 
   return (
     <div className="inset-0 h-auto  bg-black	 ">
+
       <div className="mx-auto flex flex-col md:flex-row w-full md:w-3/4">
   <div className="flex h-auto w-full md:w-1/2 flex-wrap">
     <Card className="m-5 h-[16rem] w-full sm:w-[18rem] bg-black">
