@@ -32,9 +32,9 @@ const HomePage = ({attributes}: HomeProps) => {
       {mainAwards && <MainAwards data={mainAwards} />}
       {weeklyAwards && <WeeklyAwards data={weeklyAwards} />}
       {steps && <Steps data={steps} />}
-      {plansIntroduction && <PlansIntroduction data={plansIntroduction}  annualPlan={annualPlan} monthlyPlan={monthlyPlan}/>}
       {exclusiveBenefits && <ExclusiveBenefits  data={exclusiveBenefits}/>}
       {aboutUs && <AboutUs data={aboutUs} />}
+      {plansIntroduction && <PlansIntroduction data={plansIntroduction}  annualPlan={annualPlan} monthlyPlan={monthlyPlan}/>}
     </BaseLayout>
   );
 }
