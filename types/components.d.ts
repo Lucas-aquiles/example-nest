@@ -52,14 +52,11 @@ export type WeeklyAwardsProps = {
 export type StepsProps = {
   id: number;
   isActive: boolean;
-<<<<<<< HEAD
   one: any,
   two: any,
   three: any,
   imageSteps:any,
   stepsButton:any
-
-
 }| null;
 
 export type ExclusiveBenefitsProps={
@@ -74,14 +71,13 @@ export type ExclusiveBenefitsProps={
 }| null;
 
 
-=======
-  one: any;
-  two: any;
-  three: any;
-  imageSteps: any;
-  stepsButton: any;
+export type PlansIntroductionProps = {
+  id: number;
+  isActive: boolean;
+  title: string;
+  content: string;
 } | null;
->>>>>>> 89093810102030e0b54c26ff655a621d77be0cd2
+
 
 export interface HeroProps {
   data: {
@@ -99,7 +95,7 @@ export interface ImageContainerProps {
   priority?: boolean;
 }
 
-// Nueva definición de AboutUsProps
+
 export type AboutUsProps = {
   id: number;
   title: string;
