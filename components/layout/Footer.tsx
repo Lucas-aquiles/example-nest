@@ -24,10 +24,10 @@ const Footer = ({}: FooterProps) => {
                 <a href="#">Sorteo</a>
               </li>
             </ul>
-            <p className="mt-2 text-lg">&copy; RifaClub 2024 Todos los Derechos Reservados</p>
+            <p className="mt-6 text-lg pl-10 pr-4">&copy; RifaClub 2024 Todos los Derechos Reservados</p>
           </div>
           {/* Right section */}
-          <div className="flex items-center">
+          <div className="flex items-center m-3">
             <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
               <img src={icon.src} alt="Insta" className="m-5 h-8 w-auto " />
             </a>

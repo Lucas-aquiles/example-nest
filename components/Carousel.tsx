@@ -22,13 +22,26 @@ const Carousel = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 3, // Default setting for desktop
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    cssEase: "linear",
-    dotsClass: "custom-dots",  
-    
+    cssEase: 'linear',
+    dotsClass: 'custom-dots',
+    responsive: [
+      {
+        breakpoint: 1024, // Tablet and above
+        settings: {
+          slidesToShow: 2, // Show 2 slides on tablets
+        },
+      },
+      {
+        breakpoint: 768, // Mobile devices
+        settings: {
+          slidesToShow: 1, // Show only 1 slide on mobile
+        },
+      },
+    ],
   };
 
   const image = {
