@@ -8,7 +8,7 @@ const ExclusiveBenefits = ({data}: any) => {
     //alt: 'introducction',
   };
   const imageCard01 = data.card01.benefitCardImage ? `https://rifa-club-strapi-develop.onrender.com${data.card01.benefitCardImage}` : '';
-  console.log("=================================================================================");
+  
   return (
   <div className="relative bg-black inset-0 h-auto py-8 px-4">
     <div className="inset-0 h-auto bg-transparent py-8 px-4">

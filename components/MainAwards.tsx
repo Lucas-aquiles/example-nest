@@ -1,7 +1,4 @@
-import Button from './Button';
 import Carousel from './Carousel';
-import BackgroundPage from './ImageBackground';
-import ImageContainer from './ImageContainer';
 
 const MainAwards = ({data}: any) => {
   const image = {
