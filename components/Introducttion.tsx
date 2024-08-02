@@ -9,7 +9,7 @@ const Introducttion = ({data}: any) => {
   };
 
   return (
-    <div className="inset-0 h-auto bg-black">
+    <div className="inset-0 h-auto bg-black pt-9">
   <div className="mx-auto flex flex-col sm:flex-row w-full sm:w-3/4 items-center">
     <ImageContainer
       image={image}

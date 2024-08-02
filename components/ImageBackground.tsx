@@ -2,6 +2,7 @@ import Image from 'next/legacy/image';
 import {ImageContainerProps} from '../types/components';
 const BackgroundPage = ({image, children, heightContainer, col, row, span }: any) => {
   const url = 'https://sb.kaleidousercontent.com/67418/960x550/d1e78c2a25/individuals-a.png';
+  const urlImage= "/img/p.png"
   return (
     <div
       className={` relative ${heightContainer}
@@ -10,7 +11,7 @@ const BackgroundPage = ({image, children, heightContainer, col, row, span }: any
       <div className="absolute inset-0 transform scale-110 translate-x-[-5%]">
       <Image
           alt="rifa"
-          src={url}
+          src={urlImage}
           layout="fill"
           objectFit="cover"
           objectPosition="right"   // Ajusta la posición de la imagen
