@@ -11,7 +11,7 @@ const HomeBanner = ({data}: HomeBannerProps) => {
   };
   return (
     <div className="relative z-0 h-auto bg-black">
-      <BackgroundPage image={images || null} heightContainer="h-150" col="1" row="3" span="1">
+      <BackgroundPage image={images || null} heightContainer="h-150" col="1" row="2" >
         <div className="relative z-0 mx-4 flex h-full w-full flex-col items-center justify-center text-center">
           <h1 className="text-2x4 w-full max-w-xl break-words p-1 leading-tight text-white sm:m-auto sm:text-2xl sm:leading-snug">
             {data.title}
