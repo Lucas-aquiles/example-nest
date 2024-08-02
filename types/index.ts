@@ -16,6 +16,10 @@ export interface LayoutProps {
 
 export interface HeaderProps {}
 
+export interface HomeBannerProps {
+  data: Record<string, any>;
+}
+
 export interface FooterProps {}
 
 export interface RequestStatus {

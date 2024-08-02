@@ -8,3 +8,31 @@
 body {
   font-family: 'Nunito Sans', sans-serif;
 }
+
+/* sliderStyles.css */
+
+.custom-dots {
+  bottom: 10px; /* Ajusta según tus necesidades */
+}
+
+.custom-dots li {
+  display: inline-block; /* Alinea los puntos en una fila */
+  margin: 0 5px; /* Espacio entre los puntos */
+}
+
+.custom-dots li button {
+  color: white;
+  font-size: 0.01px;
+  background-color: white;
+  border-radius: 50%; 
+  width: 0.75rem;
+  height: 0.75rem; 
+  border: 1px solid green; 
+  padding: 0; 
+  display: inline-block; 
+}
+
+.custom-dots li.slick-active button {
+  background-color: green;
+  border: 1px solid darkgreen; 
+}

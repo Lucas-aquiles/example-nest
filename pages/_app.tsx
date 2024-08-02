@@ -1,15 +1,16 @@
-import type {AppProps} from 'next/app';
+import type { AppProps } from 'next/app';
 import App from 'next/app';
 import AppProvider from '../lib/AppContext';
-import {ConfigProps} from '../types';
-
+import { ConfigProps } from '../types';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import '../styles/globals.css';
 import updateLocale from 'dayjs/plugin/updateLocale';
 import dayjs from 'dayjs';
-import {daysInSpanish, monthsInSpanish} from '../lib/consts';
-
+import { daysInSpanish, monthsInSpanish } from '../lib/consts';
 import '../styles/globals.css';
 import Script from 'next/script';
-import {GTM_ID} from '../lib/gtm';
+import { GTM_ID } from '../lib/gtm';
 
 interface MyAppProps extends AppProps {
   configData: ConfigProps;

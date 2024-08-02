@@ -18,7 +18,7 @@ const ImageContainer = ({
         className={classNames(
           objectFit || '',
           imageClassName || '',
-          'object-contain  lg:object-cover'
+          '  object-contain lg:object-cover'
         )}
         layout="fill"
         {...(priority ? {priority} : {loading: loadingType, lazyBoundary: '1000px'})}
