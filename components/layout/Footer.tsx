@@ -1,8 +1,7 @@
 import {useAppContext} from '../../lib/AppContext';
 import {FooterProps} from '../../types';
-// TODO revisar como usar imagenes con nextJS
-// import img from '../../public/img/logo1.png';
-// import icon from '../../public/icons/iconInstagram.png';
+import img from '../../public/img/logo1.png';
+import icon from '../../public/icons/iconInstagram.png';
 
 const Footer = ({}: FooterProps) => {
   const {configData} = useAppContext();
@@ -12,7 +11,7 @@ const Footer = ({}: FooterProps) => {
         <div className="flex items-center justify-between">
           {/* Left section */}
           <div>
-            {/* <img src={img.src} alt="Logo" className="m-5 h-20 w-auto" /> */}
+            <img src={img.src} alt="Logo" className="m-5 h-20 w-auto" />
             <h1 className="text-4xl font-bold text-white">RifaClub</h1>
           </div>
           {/* Center section */}
@@ -30,7 +29,7 @@ const Footer = ({}: FooterProps) => {
           {/* Right section */}
           <div className="flex items-center m-3">
             <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-              {/* <img src={icon.src} alt="Insta" className="m-5 h-8 w-auto " /> */}
+              <img src={icon.src} alt="Insta" className="m-5 h-8 w-auto " />
             </a>
           </div>
         </div>
