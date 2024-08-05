@@ -58,9 +58,9 @@ const Header = ({}: HeaderProps) => {
           <div className="flex items-center rounded-lg px-3 py-1 text-sm md:text-base">
             <Button
               className="m-4 rounded-lg bg-green-500 px-3 py-1 text-xs text-black hover:bg-green-600 md:text-sm lg:text-base"
-              children="! Suscribete Aqui ¡"
               href="#"
-            ></Button>
+            >¡Suscríbete Aquí!
+            </Button>
           </div>
         </div>
       </div>
