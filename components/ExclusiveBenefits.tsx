@@ -19,7 +19,7 @@ const ExclusiveBenefits = ({data}: any) => {
         </div>
         <div className="pl-9 w-full lg:w-1/2 flex flex-col lg:flex-row gap-4 mt-8 lg:mt-0">
           <div className="w-full lg:w-1/2 flex flex-col items-center mb-4 lg:mb-0">
-            <Card className="w-full h-[420px] bg-cardBackground flex flex-col items-center p-4 z-50">
+            <Card className="w-full h-[420px] bg-cardBackground flex flex-col items-center p-4 z-49">
               <div className="w-full flex justify-center mb-3">
                 <ImageContainer
                   image={image}
@@ -34,7 +34,7 @@ const ExclusiveBenefits = ({data}: any) => {
             </Card>
           </div>
           <div className="w-full lg:w-1/2 flex flex-col items-center">
-            <Card className="w-full h-[420px] bg-cardBackground flex flex-col items-center p-4 z-50">
+            <Card className="w-full h-[420px] bg-cardBackground flex flex-col items-center p-4 z-49">
               <div className="w-full flex justify-center mb-3">
                 <ImageContainer
                   image={image}
