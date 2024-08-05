@@ -1,7 +1,7 @@
 import {useState, useContext, RefObject} from 'react';
 import {HeaderProps} from '../../types';
 import Button from '../Button';
-// import img from '../../public/img/logo.png';
+import img from '../../public/img/logo.png';
 
 const Header = ({}: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,11 +10,11 @@ const Header = ({}: HeaderProps) => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-black shadow-lg">
+    <header className="sticky top-0 z-50 bg-black shadow-lg z-50">
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between py-2">
           <div>
-            {/* <img src={img.src} alt="Logo" className=" h-8 w-auto" /> */}
+            <img src={img.src} alt="Logo" className=" h-8 w-auto" />
           </div>
           <button
             onClick={toggleMenu}
