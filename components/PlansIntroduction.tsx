@@ -3,6 +3,9 @@ import Card from './Card';
 import ImageContainer from './ImageContainer';
 import Button from './Button';
 const PlansIntroduction = ({data, monthlyPlan, annualPlan}: any) => {
+  if (!data.isActive) {
+    return null;
+  }
   const image = {
     original: 'https://sb.kaleidousercontent.com/67418/960x550/d1e78c2a25/individuals-a.png',
     alt: 'introducction',

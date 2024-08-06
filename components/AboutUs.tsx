@@ -2,6 +2,9 @@ import Button from './Button';
 import ImageContainer from './ImageContainer';
 
 const AboutUs = ({data}: any) => {
+  if (!data.isActive) {
+    return null;
+  }
   const image = {
     original: 'https://sb.kaleidousercontent.com/67418/960x550/d1e78c2a25/individuals-a.png',
     alt: 'introducction',

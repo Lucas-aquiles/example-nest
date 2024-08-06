@@ -10,7 +10,7 @@ const Header = ({}: HeaderProps) => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-black shadow-lg z-50">
+    <header className="sticky top-0  bg-black shadow-lg z-50">
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between py-2">
           <div>

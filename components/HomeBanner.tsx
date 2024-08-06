@@ -3,6 +3,9 @@ import Button from './Button';
 import BackgroundPage from './BackgroundPage';
 
 const HomeBanner = ({data}: HomeBannerProps) => {
+  if (!data.isActive) {
+    return null;
+  }
   const url = data?.backgroundImage.data[0].attributes.url;
 
   const images = {
