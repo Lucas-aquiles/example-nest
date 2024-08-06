@@ -3,17 +3,6 @@ import Slider from 'react-slick';
 import Card from './Card';
 import ImageContainer from './ImageContainer';
 
-// customPaging: () => (
-//   <div className='bg-white  hover:bg-green-700 active:bg-green-700  '
-//     style={{
-//       width: "10px",
-//       height: "10px",
-//       borderRadius: "50%",
-
-//     }}
-
-//   ></div>
-// )
 
 const Carousel = () => {
   const settings = {
