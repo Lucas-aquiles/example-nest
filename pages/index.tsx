@@ -31,42 +31,46 @@ const HomePage = ({attributes}: HomeProps) => {
     () => parsePlansData(attributes?.plansAttributes),
     [attributes]
   );
+
   if (!attributes) return <Custom500 />;
-
-  const HomeBannerSort = {weight:homeBanner?.weight , name: "homeBanner"};
-  const introductionSort = {weight: introduction?.weight, name:"introduction"};
-  const mainAwardsSort = mainAwards?.weight;
-  const weeklyAwardsSort = weeklyAwards?.weight;
-  const stepsSort = steps?.weight;
-  const plansIntroductionSort = plansIntroduction?.weight;
-  const exclusiveBenefitsSort = exclusiveBenefits?.weight;
-  const aboutUsSort = aboutUs?.weight;
-
-  
-
-  return (
-    <BaseLayout seo={seo}>
-      {homeBanner && <HomeBanner data={homeBanner} />}
-      {introduction && <Introducttion data={introduction} />}
-      {mainAwards && <MainAwards data={mainAwards} />}
-      {weeklyAwards && <WeeklyAwards data={weeklyAwards} />}
-      {steps && <Steps data={steps} />}
-      {exclusiveBenefits && <ExclusiveBenefits data={exclusiveBenefits} />}
-      {aboutUs && <AboutUs data={aboutUs} />}
-      {plansIntroduction && (
+  const components = [
+    {component: <HomeBanner data={homeBanner} />, weight: homeBanner?.weight},
+    {component: <Introducttion data={introduction} />, weight: introduction?.weight},
+    {component: <MainAwards data={mainAwards} />, weight: mainAwards?.weight},
+    {component: <WeeklyAwards data={weeklyAwards} />, weight: weeklyAwards?.weight},
+    {component: <Steps data={steps} />, weight: steps?.weight},
+    {component: <ExclusiveBenefits data={exclusiveBenefits} />, weight: exclusiveBenefits?.weight},
+    {component: <AboutUs data={aboutUs} />, weight: aboutUs?.weight},
+    {
+      component: (
         <PlansIntroduction
           data={plansIntroduction}
           annualPlan={annualPlan}
           monthlyPlan={monthlyPlan}
         />
-      )}
+      ),
+      weight: plansIntroduction?.weight,
+    },
+  ];
+  const sortedComponents = components
+    .filter(({weight}) => weight !== undefined && weight !== null) // Ensure the component has a weight
+    .sort((a, b) => {
+      const weightA = a.weight ?? Number.MAX_SAFE_INTEGER;
+      const weightB = b.weight ?? Number.MAX_SAFE_INTEGER;
+      return weightA - weightB;
+    });
+
+  return (
+    <BaseLayout seo={seo}>
+      {sortedComponents.map(({component}, index) => (
+        <div key={index}>{component}</div>
+      ))}
     </BaseLayout>
   );
 };
 
 export async function getServerSideProps(context: ServerSideContext) {
   const [homeData, plansData] = await Promise.all([getStrapiData('home'), getStrapiData('plans')]);
-  // console.log( JSON.stringify(plansData.data[0]));
 
   return {
     props: {

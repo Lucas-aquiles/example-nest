@@ -3,7 +3,6 @@ import Slider from 'react-slick';
 import Card from './Card';
 import ImageContainer from './ImageContainer';
 
-
 const Carousel = () => {
   const settings = {
     dots: true,

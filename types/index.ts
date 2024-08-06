@@ -15,9 +15,8 @@ export interface LayoutProps {
 }
 
 export interface HeaderProps {}
-
 export interface HomeBannerProps {
-  data: Record<string, any>;
+  data: Record<string, any> | null;
 }
 
 export interface FooterProps {}

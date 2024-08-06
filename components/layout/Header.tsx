@@ -1,6 +1,7 @@
 import {useState, useContext, RefObject} from 'react';
 import {HeaderProps} from '../../types';
 import Button from '../Button';
+import Image from 'next/image';
 import img from '../../public/img/logo.png';
 
 const Header = ({}: HeaderProps) => {
@@ -10,11 +11,11 @@ const Header = ({}: HeaderProps) => {
   };
 
   return (
-    <header className="sticky top-0  bg-black shadow-lg z-50">
+    <header className="sticky top-0  z-50 bg-black shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between py-2">
           <div>
-            <img src={img.src} alt="Logo" className=" h-8 w-auto" />
+            <Image src={img} alt="Logo" className=" h-8 w-auto" />
           </div>
           <button
             onClick={toggleMenu}
@@ -59,7 +60,8 @@ const Header = ({}: HeaderProps) => {
             <Button
               className="m-4 rounded-lg bg-green-500 px-3 py-1 text-xs text-black hover:bg-green-600 md:text-sm lg:text-base"
               href="#"
-            >¡Suscríbete Aquí!
+            >
+              ! Suscribete Aqui ¡
             </Button>
           </div>
         </div>

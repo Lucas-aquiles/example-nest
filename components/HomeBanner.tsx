@@ -3,11 +3,12 @@ import Button from './Button';
 import BackgroundPage from './BackgroundPage';
 
 const HomeBanner = ({data}: HomeBannerProps) => {
+  if (!data) return null; // Handle null case
+
   if (!data.isActive) {
     return null;
   }
   const url = data?.backgroundImage.data[0].attributes.url;
-
   const images = {
     original: `https://rifa-club-strapi-develop.onrender.com${url}`,
     alt: 'Picture',

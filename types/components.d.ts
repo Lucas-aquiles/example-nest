@@ -27,7 +27,7 @@ export type HomeBannerProps = {
   isActive: boolean;
   backgroundImage: any;
   suscribeNow: any;
-  weight: number;
+  weight: number | undefined;
 } | null;
 
 export type IntroductionProps = {
@@ -36,21 +36,21 @@ export type IntroductionProps = {
   isActive: boolean;
   backgroundImage: any;
   content: string;
-  weight: number;
+  weight: number | undefined;
 } | null;
 
 export type MainAwardsProps = {
   id: number;
   title: string;
   isActive: boolean;
-  weight: number;
+  weight: number | undefined;
 } | null;
 
 export type WeeklyAwardsProps = {
   id: number;
   title: string;
   isActive: boolean;
-  weight: number;
+  weight: number | undefined;
 } | null;
 
 export type StepsProps = {
@@ -61,7 +61,7 @@ export type StepsProps = {
   three: any;
   imageSteps: any;
   stepsButton: any;
-  weight: number;
+  weight: number | undefined;
 } | null;
 
 export type ExclusiveBenefitsProps = {
@@ -73,7 +73,7 @@ export type ExclusiveBenefitsProps = {
   card02: any;
   card01Url: string;
   card02Url;
-  weight: number;
+  weight: number | undefined;
 } | null;
 
 export type PlansIntroductionProps = {
@@ -81,7 +81,7 @@ export type PlansIntroductionProps = {
   isActive: boolean;
   title: string;
   content: string;
-  weight: number;
+  weight: number | undefined;
 } | null;
 
 export interface HeroProps {
@@ -108,5 +108,5 @@ export type AboutUsProps = {
   content: string;
   imageLeft: any;
   aboutUsButton: any;
-  weight: number;
+  weight: number | undefined;
 } | null;

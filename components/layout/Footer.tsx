@@ -1,5 +1,6 @@
 import {useAppContext} from '../../lib/AppContext';
 import {FooterProps} from '../../types';
+import Image from 'next/image';
 import img from '../../public/img/logo1.png';
 import icon from '../../public/icons/iconInstagram.png';
 
@@ -11,7 +12,7 @@ const Footer = ({}: FooterProps) => {
         <div className="flex items-center justify-between">
           {/* Left section */}
           <div>
-            <img src={img.src} alt="Logo" className="m-5 h-20 w-auto" />
+            <Image src={img} alt="Logo" className="m-5 h-20 w-auto" />
             <h1 className="text-4xl font-bold text-white">RifaClub</h1>
           </div>
           {/* Center section */}
@@ -24,12 +25,12 @@ const Footer = ({}: FooterProps) => {
                 <a href="#">Sorteo</a>
               </li>
             </ul>
-            <p className="mt-6 text-lg pl-10 pr-4">&copy; RifaClub 2024 Todos los Derechos Reservados</p>
+            <p className="mt-2 text-lg">&copy; RifaClub 2024 Todos los Derechos Reservados</p>
           </div>
           {/* Right section */}
-          <div className="flex items-center m-3">
+          <div className="flex items-center">
             <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-              <img src={icon.src} alt="Insta" className="m-5 h-8 w-auto " />
+              <Image src={icon} alt="Insta" className="m-5 h-8 w-auto" />
             </a>
           </div>
         </div>
