@@ -51,7 +51,8 @@ const getHomeBannerAttributes = (homeBanner: any): HomeBannerProps => {
     title: homeBanner?.title,
     isActive: homeBanner?.isActive,
     backgroundImage: homeBanner?.backgroundImage,
-    suscribeNow: homeBanner?.suscribeNow
+    suscribeNow: homeBanner?.suscribeNow,
+    weight: homeBanner?.weight,
   };
 
   return attributesFormatted || null;
@@ -64,6 +65,7 @@ const getIntroductionAttributes = (introduction: any): IntroductionProps => {
     isActive: introduction?.isActive,
     content: introduction?.content,
     backgroundImage: introduction?.image,
+    weight: introduction?.weight,
   };
 
   return attributesFormatted || null;
@@ -74,6 +76,7 @@ const getMainAwardsAttributes = (mainAwards: any): MainAwardsProps => {
     id: mainAwards?.id,
     title: mainAwards?.title,
     isActive: mainAwards?.isActive,
+    weight: mainAwards?.weight,
   };
 
   return attributesFormatted || null;
@@ -84,6 +87,7 @@ const getWeeklyAwardsAttributes = (weeklyAwards: any): WeeklyAwardsProps => {
     id: weeklyAwards?.id,
     title: weeklyAwards?.title,
     isActive: weeklyAwards?.isActive,
+    weight: weeklyAwards?.weight,
   };
   return attributesFormatted || null;
 };
@@ -97,7 +101,7 @@ const getStepsAttributes = (steps: any): StepsProps => {
     three: steps?.three,
     imageSteps: steps?.imageSteps,
     stepsButton: steps?.stepsButton,
-
+    weight: steps?.weight,
   };
 
   return attributesFormatted || null;
@@ -109,6 +113,7 @@ const getPlansIntroduction = (plansIntroduction: any): PlansIntroductionProps =>
     isActive: plansIntroduction?.isActive,
     title: plansIntroduction?.title,
     content: plansIntroduction?.content,
+    weight: plansIntroduction?.weight,
   };
   return attributesFormatted || null;
 };
@@ -123,7 +128,7 @@ const getexclusiveBenefitsAttributes = (exclusiveBenefits: any): ExclusiveBenefi
     card01Url: exclusiveBenefits?.card01.benefitCardImage.data.attributes.formats.thumbnail.url,
     card02: exclusiveBenefits?.card02,
     card02Url: exclusiveBenefits?.card02.benefitCardImage.data.attributes.formats.thumbnail.url,
-    
+    weight: exclusiveBenefits?.weight,
   };
 
   return attributesFormatted || null;
@@ -157,10 +162,10 @@ const getAboutUsAttributes = (AboutUs: any): AboutUsProps => {
     title: AboutUs?.title,
     isActive: AboutUs?.isActive,
     content: AboutUs?.content,
-    backgroundImage:AboutUs?.backgroundImage,
+    backgroundImage: AboutUs?.backgroundImage,
     imageLeft: AboutUs?.imageLeft,
     aboutUsButton: AboutUs?.aboutUsButton,
-
+    weight: AboutUs?.weight,
   };
   return attributesFormatted || null;
 };
@@ -186,7 +191,6 @@ export const parseHomeData = (info: Record<string, any> | null) => ({
   plansIntroduction: getPlansIntroduction(info?.plansIntroduction),
   aboutUs: getAboutUsAttributes(info?.AboutUs), // Añadir esta línea
   exclusiveBenefits: getexclusiveBenefitsAttributes(info?.exclusiveBenefits),
-
 });
 
 export const parsePlansData = (info: Record<string, any> | null) => {

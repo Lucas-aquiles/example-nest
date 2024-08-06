@@ -1,4 +1,4 @@
-import { CSSProperties, Dispatch, ReactNode, SetStateAction } from 'react';
+import {CSSProperties, Dispatch, ReactNode, SetStateAction} from 'react';
 import HomeBanner from '../components/layout/HomeBanner';
 
 export type ImageAttributesProps = {
@@ -27,6 +27,7 @@ export type HomeBannerProps = {
   isActive: boolean;
   backgroundImage: any;
   suscribeNow: any;
+  weight: number;
 } | null;
 
 export type IntroductionProps = {
@@ -35,49 +36,53 @@ export type IntroductionProps = {
   isActive: boolean;
   backgroundImage: any;
   content: string;
+  weight: number;
 } | null;
 
 export type MainAwardsProps = {
   id: number;
   title: string;
   isActive: boolean;
+  weight: number;
 } | null;
 
 export type WeeklyAwardsProps = {
   id: number;
   title: string;
   isActive: boolean;
+  weight: number;
 } | null;
 
 export type StepsProps = {
   id: number;
   isActive: boolean;
-  one: any,
-  two: any,
-  three: any,
-  imageSteps:any,
-  stepsButton:any
+  one: any;
+  two: any;
+  three: any;
+  imageSteps: any;
+  stepsButton: any;
+  weight: number;
 } | null;
 
-export type ExclusiveBenefitsProps={
+export type ExclusiveBenefitsProps = {
   id: number;
   isActive: boolean;
   title: any;
   content: any;
   card01: any;
   card02: any;
-  card01Url:string;
-  card02Url
+  card01Url: string;
+  card02Url;
+  weight: number;
 } | null;
-
 
 export type PlansIntroductionProps = {
   id: number;
   isActive: boolean;
   title: string;
   content: string;
+  weight: number;
 } | null;
-
 
 export interface HeroProps {
   data: {
@@ -103,4 +108,5 @@ export type AboutUsProps = {
   content: string;
   imageLeft: any;
   aboutUsButton: any;
+  weight: number;
 } | null;

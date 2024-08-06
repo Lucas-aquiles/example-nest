@@ -14,16 +14,35 @@ import PlansIntroduction from '../components/PlansIntroduction';
 import ExclusiveBenefits from '../components/ExclusiveBenefits';
 import AboutUs from '../components/AboutUs';
 
-
 const HomePage = ({attributes}: HomeProps) => {
+  const {
+    seo,
+    homeBanner,
+    introduction,
+    mainAwards,
+    weeklyAwards,
+    steps,
+    plansIntroduction,
+    exclusiveBenefits,
+    aboutUs,
+  } = useMemo(() => parseHomeData(attributes?.homeAttributes), [attributes]);
 
-  const {seo, homeBanner, introduction, mainAwards, weeklyAwards, steps, plansIntroduction,exclusiveBenefits,aboutUs} =
-    useMemo(() => parseHomeData(attributes?.homeAttributes), [attributes]);
-
-  const {monthlyPlan, annualPlan} = useMemo(() => parsePlansData(attributes?.plansAttributes), [attributes]);
-
-
+  const {monthlyPlan, annualPlan} = useMemo(
+    () => parsePlansData(attributes?.plansAttributes),
+    [attributes]
+  );
   if (!attributes) return <Custom500 />;
+
+  const HomeBannerSort = {weight:homeBanner?.weight , name: "homeBanner"};
+  const introductionSort = {weight: introduction?.weight, name:"introduction"};
+  const mainAwardsSort = mainAwards?.weight;
+  const weeklyAwardsSort = weeklyAwards?.weight;
+  const stepsSort = steps?.weight;
+  const plansIntroductionSort = plansIntroduction?.weight;
+  const exclusiveBenefitsSort = exclusiveBenefits?.weight;
+  const aboutUsSort = aboutUs?.weight;
+
+  
 
   return (
     <BaseLayout seo={seo}>
@@ -32,12 +51,18 @@ const HomePage = ({attributes}: HomeProps) => {
       {mainAwards && <MainAwards data={mainAwards} />}
       {weeklyAwards && <WeeklyAwards data={weeklyAwards} />}
       {steps && <Steps data={steps} />}
-      {exclusiveBenefits && <ExclusiveBenefits  data={exclusiveBenefits}/>}
+      {exclusiveBenefits && <ExclusiveBenefits data={exclusiveBenefits} />}
       {aboutUs && <AboutUs data={aboutUs} />}
-      {plansIntroduction && <PlansIntroduction data={plansIntroduction}  annualPlan={annualPlan} monthlyPlan={monthlyPlan}/>}
+      {plansIntroduction && (
+        <PlansIntroduction
+          data={plansIntroduction}
+          annualPlan={annualPlan}
+          monthlyPlan={monthlyPlan}
+        />
+      )}
     </BaseLayout>
   );
-}
+};
 
 export async function getServerSideProps(context: ServerSideContext) {
   const [homeData, plansData] = await Promise.all([getStrapiData('home'), getStrapiData('plans')]);
@@ -51,7 +76,6 @@ export async function getServerSideProps(context: ServerSideContext) {
       },
     },
   };
-
 }
 
 export default HomePage;
