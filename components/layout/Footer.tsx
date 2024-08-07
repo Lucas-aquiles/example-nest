@@ -7,7 +7,7 @@ import icon from '../../public/icons/iconInstagram.png';
 const Footer = ({}: FooterProps) => {
   const {configData} = useAppContext();
   return (
-    <footer className="bg-gradient-to-b from-black to-green-500 text-white">
+    <footer className="bg-gradient-to-b from-black to-[#209b5f] text-white">
       <div className="container mx-auto px-4 py-8">
         <div className="flex items-center justify-between">
           {/* Left section */}
