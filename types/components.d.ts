@@ -56,9 +56,7 @@ export type WeeklyAwardsProps = {
 export type StepsProps = {
   id: number;
   isActive: boolean;
-  one: any;
-  two: any;
-  three: any;
+  individualSteps: any[];
   imageSteps: any;
   stepsButton: any;
   weight: number | undefined;
@@ -69,10 +67,10 @@ export type ExclusiveBenefitsProps = {
   isActive: boolean;
   title: any;
   content: any;
-  card01: any;
-  card02: any;
-  card01Url: string;
-  card02Url;
+  cards: Array<{
+    benefitCardImage: any;
+    cardUrl: string;
+  }>;
   weight: number | undefined;
 } | null;
 

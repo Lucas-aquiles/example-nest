@@ -96,9 +96,7 @@ const getStepsAttributes = (steps: any): StepsProps => {
   const attributesFormatted: StepsProps = {
     id: steps?.id,
     isActive: steps?.isActive,
-    one: steps?.one,
-    two: steps?.two,
-    three: steps?.three,
+    individualSteps: steps?.individualSteps,
     imageSteps: steps?.imageSteps,
     stepsButton: steps?.stepsButton,
     weight: steps?.weight,
@@ -124,10 +122,10 @@ const getexclusiveBenefitsAttributes = (exclusiveBenefits: any): ExclusiveBenefi
     isActive: exclusiveBenefits?.isActive,
     title: exclusiveBenefits?.title,
     content: exclusiveBenefits?.content,
-    card01: exclusiveBenefits?.card01,
-    card01Url: exclusiveBenefits?.card01.benefitCardImage.data.attributes.formats.thumbnail.url,
-    card02: exclusiveBenefits?.card02,
-    card02Url: exclusiveBenefits?.card02.benefitCardImage.data.attributes.formats.thumbnail.url,
+    cards: exclusiveBenefits?.cards?.map((card: any) => ({
+      ...card,
+      cardUrl: card.benefitCardImage?.data?.attributes?.formats?.thumbnail?.url || '',
+    })),
     weight: exclusiveBenefits?.weight,
   };
 
